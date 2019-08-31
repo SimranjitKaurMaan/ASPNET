@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<RentalStore.Models.Car>
+@*Comment
+    on mutliple lines
+*@
+
+@{
+    ViewBag.Title = "Book A Car | Rent Cars @ Most Affordable rates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2> Cars </h2>
+
+    @*@if (Model.Car == 0)
+    {
+        <p>No car available  yet </p>
+    }*@
+
+
+<ul>
+    @foreach (var car in Model)
+    {
+        <li>@Html.ActionLink(car.Name, "Details", "Cars", new { Id = car.Id }, null)</li>
+    }
+</ul>
+
+
+
+
+
+
